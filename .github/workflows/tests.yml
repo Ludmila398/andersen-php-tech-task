@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
 
     services:
-      postgres:
+      mysql:
         image: mysql:5.7
         env:
           MYSQL_ROOT_PASSWORD: root
@@ -33,13 +33,13 @@ jobs:
     - name: Setup PHP
       uses: shivammathur/setup-php@v2
       with:
-          php-version: '8.1'
+          php-version: '8.3'
           extensions: mbstring, pdo, pdo_mysql, xdebug  
     
     - name: Setup project
       run: make setup
       
-    - name: Run migrations (PostgreSQL)
+    - name: Run migrations (MySQL)
       run: |
         php artisan migrate --force  
         
