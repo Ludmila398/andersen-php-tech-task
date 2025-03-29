@@ -26,7 +26,7 @@ git clone git@github.com:Ludmila398/andersen-php-tech-task.git
 cd andersen-php-tech-task
 ```
 
-2.Install dependencies using Composer. Ensure that make is installed and available on your system. The make setup command will use Composer to install dependencies and prepare the project:
+2. Install dependencies using Composer. Ensure that make is installed and available on your system. The make setup command will use Composer to install dependencies and prepare the project:
 
 ```bash
 make setup
@@ -50,8 +50,9 @@ make migrate
 make serve
 ```
 
-The project is now available at `http://127.0.0.1:8000`
+5. The project is now available at `http://127.0.0.1:8000`
 5 demo messages are automatically seeded into the database.
+
 ---
 
 ### Project Structure
