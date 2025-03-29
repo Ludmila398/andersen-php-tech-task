@@ -41,7 +41,7 @@ jobs:
       
     - name: Run migrations (MySQL)
       run: |
-        php artisan migrate --force  
+        php artisan migrate:fresh --force --seed  
         
     - name: Run Linter
       run: make lint 
