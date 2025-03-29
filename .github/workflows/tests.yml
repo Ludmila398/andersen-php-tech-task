@@ -19,7 +19,7 @@ jobs:
         image: mysql:5.7
         env:
           MYSQL_ROOT_PASSWORD: root
-          MYSQL_DATABASE: test
+          MYSQL_DATABASE: laravel
         ports:
           - 3306:3306
         options: >-
@@ -38,7 +38,17 @@ jobs:
     
     - name: Setup project
       run: make setup
-      
+    
+    - name: Copy .env
+      run: cp .env.example .env
+    
+    - name: Set DB credentials (root user)
+      run: |
+        sed -i 's/DB_HOST=.*/DB_HOST=127.0.0.1/' .env
+        sed -i 's/DB_DATABASE=.*/DB_DATABASE=laravel/' .env
+        sed -i 's/DB_USERNAME=.*/DB_USERNAME=root/' .env
+        sed -i 's/DB_PASSWORD=.*/DB_PASSWORD=root/' .env
+
     - name: Run migrations (MySQL)
       run: |
         php artisan migrate:fresh --force --seed  
