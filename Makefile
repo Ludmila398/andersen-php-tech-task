@@ -17,7 +17,7 @@ test-coverage:
 	composer exec --verbose phpunit tests -- --filter MessageTest --coverage-clover build/logs/clover.xml
 
 test:
-	php artisan test
+	php artisan test --filter MessageTest
 
 build:
 	npm ci && npm run build

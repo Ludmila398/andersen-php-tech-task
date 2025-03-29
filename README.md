@@ -1,14 +1,5 @@
-
-## Requirements
-
-- PHP >= 8.1
-- Composer
-- MySQL
-- Node.js
-
-
-пример, передеать! 
-
+### Tests and linter status:
+[![Run linter and tests](https://github.com/Ludmila398/andersen-php-tech-task/actions/workflows/tests.yml/badge.svg)](https://github.com/Ludmila398/andersen-php-tech-task/actions/workflows/tests.yml)
 
 # Andersen PHP Technical Task
 
@@ -40,6 +31,14 @@ A simple Laravel 8 project allowing users to submit messages through a form. All
 - Git
 - Make
 ---
+
+
+## Requirements
+
+- PHP >= 8.1
+- Composer
+- MySQL
+- Node.js
 
 ### Installation and Setup
 
