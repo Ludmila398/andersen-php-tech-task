@@ -36,9 +36,6 @@ jobs:
           php-version: '8.3'
           extensions: mbstring, pdo, pdo_mysql, xdebug  
     
-    - name: Setup project
-      run: make setup
-    
     - name: Copy .env
       run: cp .env.example .env
     
@@ -48,6 +45,9 @@ jobs:
         sed -i 's/DB_DATABASE=.*/DB_DATABASE=laravel/' .env
         sed -i 's/DB_USERNAME=.*/DB_USERNAME=root/' .env
         sed -i 's/DB_PASSWORD=.*/DB_PASSWORD=root/' .env
+
+    - name: Setup project
+      run: make setup
 
     - name: Run migrations (MySQL)
       run: |
