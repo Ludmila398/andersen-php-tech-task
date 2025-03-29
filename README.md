@@ -4,70 +4,35 @@
 # Andersen PHP Technical Task
 
 ### Project Description
-A simple Laravel 8 project allowing users to submit messages through a form. All submitted messages are stored in the database and displayed on the page.
-
----
-
-### Tasks Completed:
-
-- ✅ Initialized repository on GitHub
-- ✅ Created new Laravel 8 project
-- ✅ Installed and configured MySQL database
-- ✅ Implemented a form with the following fields:
-  - Name
-  - Email
-  - Message
-- ✅ Implemented data storage into the database upon form submission
-- ✅ Implemented display of all submitted messages (name, email, message, creation date)
-- ✅ Added validation for form inputs
+A simple Laravel 8 project allowing users to submit messages through a form. All submitted messages are stored in the database and displayed on the page. 5 sample messages are pre-generated using a factory and seeder for demonstration.
 
 ---
 
 ### Requirements
 
-- PHP >= 7.3
+- PHP >= 8.3
 - MySQL
 - Composer
-- Git
 - Make
 ---
 
-
-## Requirements
-
-- PHP >= 8.1
-- Composer
-- MySQL
-- Node.js
-
 ### Installation and Setup
 
-1. Clone the repository:
+1. Clone the repo and enter the project folder:
 
 ```bash
-git clone https://github.com/Ludmila398/andersen-php-tech-task.git
-```
+git clone git@github.com:Ludmila398/andersen-php-tech-task.git
 
-2. Navigate to the project directory and install dependencies:
-
-```bash
 cd andersen-php-tech-task
-composer install
 ```
 
-3. Copy `.env.example` and create `.env`:
+2.Install dependencies using Composer. Ensure that make is installed and available on your system. The make setup command will use Composer to install dependencies and prepare the project:
 
 ```bash
-cp .env.example .env
+make setup
 ```
 
-4. Generate application key:
-
-```bash
-php artisan key:generate
-```
-
-5. Create a MySQL database and configure the database settings in `.env`:
+3. Create a MySQL database and configure the database settings in `.env`:
 
 ```dotenv
 DB_CONNECTION=mysql
@@ -78,20 +43,15 @@ DB_USERNAME=your_username
 DB_PASSWORD=your_password
 ```
 
-6. Run migrations:
+4. Run migrations and start the local server:
 
 ```bash
-php artisan migrate
-```
-
-7. Start the local server:
-
-```bash
-php artisan serve
+make migrate
+make serve
 ```
 
 The project is now available at `http://127.0.0.1:8000`
-
+5 demo messages are automatically seeded into the database.
 ---
 
 ### Project Structure
@@ -106,13 +66,21 @@ The project is now available at `http://127.0.0.1:8000`
 
 ### Validation Rules
 
-- `name` - required field (string, min:2, max:255)
-- `email` - required field, valid email
-- `message` - required field (string, min:3)
+- `name` - required field, data type: string, maximum field length:255
+- `email` - required field, valid email, maximum field length:255
+- `message` - required field, data type: string, maximum field length:1000
+
+### Testing and Linting
+
+To run linter and tests locally:
+
+```bash
+make lint
+make test
+```
 
 ---
 
 ### Author
 
-- [Ludmila398](https://github.com/Ludmila398)
-
+- [Liudmila Gubanova](https://github.com/Ludmila398)

@@ -1,6 +1,9 @@
 migrate:
 	php artisan migrate:fresh --force --seed
 
+serve:
+	php artisan serve	
+
 install:
 	composer install
 
